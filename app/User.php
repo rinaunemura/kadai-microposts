@@ -96,12 +96,15 @@ class User extends Authenticatable
     
     public function favorite($micropostId) 
     {
+
        $exist = $this->is_favorite($micropostId);
        
        if ($exist) {
            return false;
        } else {
+
            $this->favorites()->attach($micropostId);
+
            return true;
        }
     }

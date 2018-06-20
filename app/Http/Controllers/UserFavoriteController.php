@@ -9,6 +9,7 @@ class UserFavoriteController extends Controller
     public function store(Request $request, $id)
     {
         \Auth::user()->favorite($id);
+
         return redirect()->back();
     }
 
